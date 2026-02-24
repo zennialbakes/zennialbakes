@@ -1,0 +1,68 @@
+<%- include("partials/header") %>
+
+<!-- CATEGORY HEADER -->
+<section class="bg-pink-50 py-20 px-6 border-b border-zinc-200">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <h1 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+      <%= category.charAt(0).toUpperCase() + category.slice(1) %> in Mumbai
+    </h1>
+
+    <p class="text-zinc-600 max-w-2xl mx-auto">
+      Crafted in small batches using premium ingredients.
+      Customisation available upon request.
+    </p>
+
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="max-w-6xl mx-auto px-6 py-20">
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+
+    <% items.forEach(item => { %>
+
+      <%- include("partials/product-card", {
+        title: item.title,
+        price: item.price,
+        description: item.description,
+        image: item.image,
+      }) %>
+
+    <% }) %>
+
+  </div>
+
+</section>
+
+<!-- DELIVERY NOTE -->
+<section class="bg-white border-t border-zinc-200 py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+
+    <h2 class="text-2xl font-serif mb-4">
+      Delivery Within Mumbai Only
+    </h2>
+
+    <p class="text-zinc-600">
+      Orders require 24–48 hours advance notice.
+      Same-day orders are subject to availability.
+      Custom creations may require longer lead time.
+    </p>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-zinc-900 text-white py-16 px-6 text-center">
+  <h2 class="text-2xl font-serif mb-6">
+    Need a Custom Design?
+  </h2>
+
+  <a href="https://wa.me/919326090534"
+     class="bg-white text-zinc-900 px-8 py-3 text-sm tracking-wide hover:bg-pink-400 hover:text-white transition">
+     Contact on WhatsApp
+  </a>
+</section>
+
+<%- include("partials/footer") %>

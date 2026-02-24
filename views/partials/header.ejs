@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zennialbakes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/output.css">
+
+</head>
+
+<body class="font-sans text-zinc-800 bg-white">
+
+<header class="border-b border-zinc-200">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+
+    <a href="/" class="text-2xl font-serif">ZennialBakes</a>
+
+    <!-- Mobile Button -->
+    <button id="menuBtn" class="md:hidden text-xl">☰</button>
+
+    <!-- Navigation -->
+    <nav id="mobileMenu" class="hidden absolute top-16 left-0 w-full bg-white shadow-md md:static md:block md:w-auto md:shadow-none">
+      <ul class="flex flex-col md:flex-row md:space-x-8 p-6 md:p-0 text-sm">
+        <li><a href="/products/cakes" class="block py-2 hover:text-pink-400">Cakes</a></li>
+        <li><a href="/products/cookies" class="block py-2 hover:text-pink-400">Cookies</a></li>
+        <li><a href="/products/muffins" class="block py-2 hover:text-pink-400">Muffins</a></li>
+        <li><a href="/products/pastry" class="block py-2 hover:text-pink-400">Pastry</a></li>
+        <li><a href="/about" class="block py-2 hover:text-pink-400">About</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+});
+</script>
