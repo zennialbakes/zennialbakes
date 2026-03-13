@@ -43,6 +43,24 @@ const products = {
       price: "₹550",
       description: "Loaded 6-piece gourmet cookie box.",
       image: "/images/cookies.jpg"
+    },
+    {
+      title: "Cookies1",
+      price: "₹650",
+      description: "Loaded 8-piece gourmet cookie box.",
+      image: "/images/cookies1.jpg"
+    },
+    {
+      title: "Cookies2",
+      price: "₹750",
+      description: "Loaded 12-piece gourmet cookie box.",
+      image: "/images/cookies2.jpg"
+    },
+    {
+      title: "Cookies3",
+      price: "₹850",
+      description: "Loaded 16-piece gourmet cookie box.",
+      image: "/images/cookies3.jpg"
     }
   ],
 
