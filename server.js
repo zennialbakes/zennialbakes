@@ -1,15 +1,23 @@
-const products = require("./data/products");
 const express = require("express");
+const products = require("./data/products");
+
 const app = express();
 
 // Set view engine
 app.set("view engine", "ejs");
 
-// Static folder
+// Middleware
 app.use(express.static("public"));
+app.use(express.json());
 
 // Routes
-app.get("/", (req, res) => res.render("index"));
+
+// Home
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+// Category pages
 app.get("/products/:category", (req, res) => {
   const category = req.params.category;
   const categoryProducts = products[category];
@@ -20,12 +28,16 @@ app.get("/products/:category", (req, res) => {
 
   res.render("category", {
     category,
-    items: categoryProducts
+    items: categoryProducts,
   });
 });
+
+// About
 app.get("/about", (req, res) => {
   res.render("about");
 });
+
+// Legal pages
 app.get("/terms", (req, res) => res.render("terms"));
 app.get("/privacy", (req, res) => res.render("privacy"));
 app.get("/refund", (req, res) => res.render("refund"));
